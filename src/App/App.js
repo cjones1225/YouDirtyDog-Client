@@ -8,7 +8,7 @@ import CustomerPage from '../routes/CustomerPage/CustomerPage'
 import LoginPage from '../routes/LoginPage/Login';
 import RegistrationPage from '../routes/RegistrationPage/Register';
 import NotFoundPage from '../routes/NotFoundPage/NotFoundPage';
-import Home from '../routes/Home/Home';
+import HomePage from '../routes/Home/Home';
 import LoggedInHome from '../routes/LoggedInHome/LoggedInHome';
 import './App.css';
 
@@ -32,7 +32,7 @@ class App extends Component {
             <PublicOnlyRoute
               exact
               path={'/'}
-              component={Home}
+              component={HomePage}
             />
             <PublicOnlyRoute
               path={'/login'}
@@ -41,10 +41,6 @@ class App extends Component {
             <PublicOnlyRoute
               path={'/register'}
               component={RegistrationPage}
-            />
-            <PrivateRoute
-              path={'/home'}
-              component={LoggedInHome}
             />
             <PrivateRoute
               path={'/results'}
