@@ -1,3 +1,26 @@
-.description{
-  max-width: 35%;
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: "Open Sans",
+  sans-serif;
+  font-size: 20px;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+  min-width: 320px;
+}
+section{
+  min-height: 200px;
+  padding: 6% 0;
+}
+button{
+  font-size: 12px;
+  border-radius: 8px;
+  background-color: lightgrey;
+  transition-duration: 0.4s;
+}
+button:hover{
+  background-color: darkgrey;
+  box-shadow: 0 12px 16px rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

@@ -1,11 +1,41 @@
 import React, {Component} from 'react'
+import './Home.css'
 
 export default class Home extends Component {
+  
+  onSubmitSearch = () => {
+
+  }
+  
   render(){
-    return(
-      <div className='description'>
-        <p>You Dirty Dog is a site for you to manage your dog grooming and boarding. It will help you keep track of your customer base and their pets!</p>
+    return (
+      <div>
+        <div className='searchBar'>
+          <label htmlFor='search'>Search </label>
+          <input 
+            type='text'
+            name='search'
+            id='search'
+            onSubmit={this.onSubmitSearch}
+          />
+        </div>
+        <section>
+          <header>Pet Inventory</header>
+          <button>View Inventory</button>
+          <p>
+            [<em>displays current pet inventory</em>]
+          </p>
+          <p>These are the pets currently in the building in order from oldest to newest</p>
+        </section>
+        <section>
+          <header>Grooming Schedule</header>
+          <button>Add Appointment</button>
+          <p>
+            [<em>displays grooming schedule on calendar</em>]
+          </p>
+          <p>These are your upcoming grooming appointments</p>
+        </section>
       </div>
-    )
+    );
   }
 }

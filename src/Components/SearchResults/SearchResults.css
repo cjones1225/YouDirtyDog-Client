@@ -1,0 +1,20 @@
+body{
+  font-family: "Open Sans",
+  sans-serif;
+  font-size: 20px;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+header{
+  padding: 45px 15px;
+}
+section{
+  min-height: 200px;
+  padding: 30px 15px;
+}
+div.customerCard:hover{
+  cursor: pointer;
+  outline-style: solid;
+  outline-color: lightgray;
+}

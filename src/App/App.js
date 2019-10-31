@@ -3,13 +3,13 @@ import {Route, Switch} from 'react-router-dom';
 import Header from '../Components/Header/Header';
 import PrivateRoute from '../Components/Utils/PrivateRoute';
 import PublicOnlyRoute from '../Components/Utils/PublicOnlyRoute';
-import SearchResults from '../routes/SearchResults/SearchResults';
-import CustomerPage from '../routes/CustomerPage/CustomerPage'
+import Results from '../routes/SearchResults/SearchResults';
+import CustomerCard from '../routes/CustomerCard/CustomerCard';
 import LoginPage from '../routes/LoginPage/Login';
 import RegistrationPage from '../routes/RegistrationPage/Register';
 import NotFoundPage from '../routes/NotFoundPage/NotFoundPage';
-import HomePage from '../routes/Home/Home';
-import LoggedInHome from '../routes/LoggedInHome/LoggedInHome';
+import MainPage from '../routes/MainPage/MainPage';
+import HomePage from '../routes/HomePage/HomePage'
 import './App.css';
 
 class App extends Component {
@@ -29,10 +29,10 @@ class App extends Component {
         <main className='App_main'>
           {this.state.hasError && <p className='red'>There was an Error! Oh dear.</p>}
           <Switch>
-            <PublicOnlyRoute
+            <Route
               exact
               path={'/'}
-              component={HomePage}
+              component={MainPage}
             />
             <PublicOnlyRoute
               path={'/login'}
@@ -43,12 +43,16 @@ class App extends Component {
               component={RegistrationPage}
             />
             <PrivateRoute
+              path={'/home'}
+              component={HomePage}
+            />
+            <PrivateRoute
               path={'/results'}
-              component={SearchResults}
+              component={Results}
             />
             <PrivateRoute
               path={'/customers/:customerId'}
-              component={CustomerPage}
+              component={CustomerCard}
             />
             <Route
               component={NotFoundPage}

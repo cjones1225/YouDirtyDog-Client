@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Home from '../../Components/Home/Home'
+import Main from '../../Components/Main/Main'
 import { Section } from '../../Components/Utils/Utils'
 
-export default class HomePage extends Component {
+export default class MainPage extends Component {
   static defaultProps = {
     location: {},
     history: {
@@ -12,8 +12,8 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <Section className='HomePage'>
-        <Home/>
+      <Section className='MainPage'>
+        <Main/>
       </Section>
     )
   }
