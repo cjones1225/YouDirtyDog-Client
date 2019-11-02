@@ -48,7 +48,7 @@ export class CustomerProvider extends Component {
   }
 
   addPet = pet => {
-    this.setComments([
+    this.setPets([
       ...this.state.pets,
       pet
     ])

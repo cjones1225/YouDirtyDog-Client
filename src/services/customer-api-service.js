@@ -5,13 +5,13 @@ const CustomerApiService = {
   getCustomers(){
     return fetch(`${config.API_ENDPOINT}/customers`, {
       headers: {
-
-      },
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      }
     })
-      .then(res => 
+      .then(res =>
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
-          : res.json()  
+          : res.json()
       )
   },
   getCustomer(customerId){
@@ -26,8 +26,8 @@ const CustomerApiService = {
           : res.json()  
       )
   },
-  getCustomerPets(customerId){
-    return fetch(`${config.API_ENDPOINT}/customers/${customerId}/pets`, {
+  getPets(){
+    return fetch(`${config.API_ENDPOINT}/pets`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
@@ -37,5 +37,19 @@ const CustomerApiService = {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+  },
+  getPet(petId){
+    return fetch(`${config.API_ENDPOINT}/pets/${petId}`, {
+      headers: {
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+      .then(res => 
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
   }
 }
+
+export default CustomerApiService
