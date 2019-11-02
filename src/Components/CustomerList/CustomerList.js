@@ -15,13 +15,12 @@ export default class CustomerList extends Component {
   }
 
   renderCustomers(){
-    const {customerList = []} = this.context
+    const customerList = this.context.customerList
     console.log(customerList)
     return customerList.map(customer =>
       <CustomerCard
         key={customer.id}
-        name={customer.full_name}
-        phone={customer.phone_number}
+        customer={customer}
       />  
     )
   }

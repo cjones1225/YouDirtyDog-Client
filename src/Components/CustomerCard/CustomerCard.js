@@ -11,9 +11,6 @@ export default class CustomerCard extends Component {
         <header className="CustomerCard_header">
           <h2 className="CustomerCard__heading">{customer.name}</h2>
         </header>
-        <footer className="CustomerCard_footer">
-          <CustomerPets/>
-        </footer>
       </Link>
     );
   }

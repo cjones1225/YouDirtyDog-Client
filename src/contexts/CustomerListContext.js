@@ -30,7 +30,7 @@ export class CustomerListProvider extends Component {
 
   render() {
     const value = {
-      CustomerList: this.state.CustomerList,
+      customerList: this.state.customerList,
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
